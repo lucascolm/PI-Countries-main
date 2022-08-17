@@ -39,7 +39,7 @@ const axios=require('axios');
     }
 
 
-router.get('/',async(req,res)=>{
+router.get('/',async(req,res)=>{//get all
     console.log("entra a get")
     const {name}=req.query;
     try {
@@ -59,7 +59,7 @@ router.get('/',async(req,res)=>{
         res.status(400).send('error: ' + error.message)
     }
 })
-router.get('/:id',async (req,res)=>{
+router.get('/:id',async (req,res)=>{//get by id
     console.log("holaaaaaaaaaaa")
     const {id} = req.params
     try {
