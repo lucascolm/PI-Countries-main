@@ -5,4 +5,8 @@ const{op}=require('sequelize')
 const axios=require('axios');
 
 
+
+router.post('/',async(req,res)=>{
+    
+})
 module.exports =router
