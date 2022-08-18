@@ -1,13 +1,13 @@
 const { DataTypes, Model } = require('sequelize');
 module.exports = (sequelize)=>{
     sequelize.define('activity',{
-        id:{
-            type:DataTypes.INTEGER,
-            primaryKey:true,
-            unique:true,
-            allowNull:false
+        // id:{
+        //     type:DataTypes.UUID, 
+        //     defaultValue: DataTypes.UUIDV4,
+        //     primaryKey: true,
+        //     allowNull: false
             
-        },
+        // },
         name:{
             type:DataTypes.STRING,
         },
