@@ -10,7 +10,7 @@ const getCountry = async () => {
     if (dbCountry.length > 0) {
       return dbCountry;
     }
-    const auxCountries = await axios.get("https://restcountries.com/v3/all");
+    const auxCountries = await axios.get("https://restcountries.com/v3/all?limit=15");
     const countries = auxCountries.data.map((c) => {
       return {
         id: c.cca3,
