@@ -7,8 +7,10 @@ const axios = require("axios");
 
 router.post("/", async (req, res) => {
   const { name, difficulty, duration, season } = req.body;
-  const paises = req.body.paises.map((p) => p.toUpperCase());
-
+  const paises = req.body.countries.map((p) => p.toUpperCase());
+  // let {paises}=req.body;
+  // paises=[...paises]
+  //!paises?paises=["undefined"]:
   if (!name || !difficulty || !season || !paises)
     return res.status(404).send("datos faltantes");
 
