@@ -36,6 +36,7 @@ router.get("/", async (req, res) => {
   //get all
   console.log("entra a get");
   const { name } = req.query;
+  console.log(name)
   try {
     const countries = await getCountry();
     if (name) {
@@ -46,8 +47,8 @@ router.get("/", async (req, res) => {
           },
         },
       });
-      return byNameCountries.length > 0
-        ? res.status(201).json(byNameCountries)
+      return byNameCountries.length > 0? 
+          res.status(201).json(byNameCountries)
         : res.status(201).send("no encontro paises");
     } else {
       //const countries =  await getCountry();
@@ -57,6 +58,7 @@ router.get("/", async (req, res) => {
     res.status(400).send("error: " + error.message);
   }
 });
+
 router.get("/:id", async (req, res) => {
   //get by id
   console.log("holaaaaaaaaaaa");
