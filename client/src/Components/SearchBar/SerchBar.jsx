@@ -2,24 +2,25 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom';
-import {getCountryByName,removeSearch} from '../../redux/actions'
+import {getCountryByName,removeSearch,cleanState} from '../../redux/actions'
  const SerchBar = () => {
 
   const [name,setName]=useState("")
   const dispatch=useDispatch();
 
   useEffect(()=>{
-    dispatch(getCountryByName(name))
+    if(name!==""){
+    dispatch(getCountryByName(name))}
+    else{
+      dispatch(removeSearch())
+    }
   },[name,dispatch]);
-  // const handleclick=(e)=>{
-  //   dispatch(getCountryByName(name))
-  //   setName("")
-  // }
+  
 
-  const clear=()=>{
-   dispatch(removeSearch())
-   setName("")
-  }
+  // const clear=()=>{
+  //  dispatch(removeSearch())
+  //  setName("")
+  // }
   return (
     <div>
       <input
@@ -30,7 +31,7 @@ import {getCountryByName,removeSearch} from '../../redux/actions'
       placeholder="buscar paises...">
       </input>
       {/* <button className='serchBarBtn' onClick={handleclick}>Buscar</button> */}
-      <button onClick={clear}>Clear</button>
+      {/* <button onClick={clear}>Clear</button> */}
     </div>
   )
 }
