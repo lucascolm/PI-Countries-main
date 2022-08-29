@@ -1,0 +1,70 @@
+
+.activity{
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: center;
+}
+.form {
+  width:100%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: rgba(17, 112, 163, 0.287);  
+  border-radius: 8px;
+  margin: 0 auto;
+}
+h1{
+ 
+    margin: 0 0 30px 0;
+    text-align: center;
+  
+}
+input[type="text"],
+input[type="number"],
+select {
+  
+  background: rgba(255,255,255,0.1);
+  background-color: #e8eeef;
+  color: black;
+  border: none;
+  font-size: 15px;
+  height: auto;
+  margin: 0 auto;
+  outline: 0;
+  padding: 15px;
+  width: 90%;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+select {
+
+  width: 97%;
+}
+.formBtn{
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+.formBtn:hover{
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1.050,1.050);
+}
+label {
+  display: flex;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+label.light {
+  font-weight: 300;
+  display: inline;
+}

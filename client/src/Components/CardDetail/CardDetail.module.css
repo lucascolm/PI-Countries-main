@@ -1,0 +1,35 @@
+.details{
+  display: flex;
+  margin-top: 0px;
+  padding-top: 200px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.detailCard{
+  color:black;
+  background-color: rgba(17, 112, 163, 0.287);  
+  width: 900px;
+  /* align-items: center; */
+
+}
+.countryInfo{
+  display: flex;
+  justify-content: space-around;
+}
+.detailImg{
+  margin-top: 20px;
+  width: 450px;
+  height: 300px;
+  border: 1px solid black;
+}
+.countryInfo p{
+  font-family: Arial, Helvetica, sans-serif;
+  /* width: 20px; */
+  /* height: 20px; */
+  padding-bottom: 5px;
+}
+.activities{
+  align-items: center;
+}
