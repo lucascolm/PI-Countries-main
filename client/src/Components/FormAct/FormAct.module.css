@@ -22,7 +22,6 @@ h1{
 input[type="text"],
 input[type="number"],
 select {
-  
   background: rgba(255,255,255,0.1);
   background-color: #e8eeef;
   color: black;
@@ -57,7 +56,7 @@ select {
 .formBtn:hover{
   cursor: pointer;
   opacity: 0.8;
-  transform: scale(1.050,1.050);
+  /* transform: scale(1.050,1.050); */
 }
 label {
   display: flex;
@@ -67,4 +66,28 @@ label {
 label.light {
   font-weight: 300;
   display: inline;
+}
+.closeBtn{
+ 
+    background-color: red;
+    color: white;
+    height: 20px;
+    margin-left: 5px;
+
+}
+.showcountries{
+  display: flex;
+}
+.eachCountry{
+  display: flex;
+  margin: 5px;
+  border-radius: 5px;
+  padding-top:5px;
+  
+}
+.countryName{
+  height: 30px;
+}
+.errorLabel{
+  color: red;
 }
