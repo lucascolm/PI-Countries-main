@@ -5,6 +5,19 @@ const { op } = require("sequelize");
 const axios = require("axios");
 //const { IGNORE } = require("sequelize/types/index-hints");
 
+
+router.get("/",async(req,res)=>{
+  try {
+    const actividades= await Activity.findAll({
+      include:Country
+    });
+    res.status(201).json(actividades)
+  } catch (error) {
+    res.status(404).send('error en  router get'+ error.message)
+  }
+ 
+});
+
 router.post("/", async (req, res) => {
   const { name, difficulty, duration, season } = req.body;
   const paises = req.body.countries.map((p) => p.toUpperCase());
