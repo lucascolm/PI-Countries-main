@@ -10,7 +10,7 @@ const getCountry = async () => {
     if (dbCountry.length > 0) {
       return dbCountry;
     }
-    const auxCountries = await axios.get("https://restcountries.com/v3/all?limit=15");
+    const auxCountries = await axios.get("https://restcountries.com/v3/all");
     const countries = auxCountries.data.map((c) => {
       return {
         id: c.cca3,
@@ -25,7 +25,6 @@ const getCountry = async () => {
     });
 
     await Country.bulkCreate(countries);
-
     return countries;
   } catch (error) {
     console.log("Error controllers getCountries " + error);
@@ -34,9 +33,9 @@ const getCountry = async () => {
 
 router.get("/", async (req, res) => {
   //get all
-  console.log("entra a get");
+  // console.log("entra a get");
   const { name } = req.query;
-  console.log(name)
+  // console.log(name)
   try {
     const countries = await getCountry();
     if (name) {
@@ -47,8 +46,8 @@ router.get("/", async (req, res) => {
           },
         },
       });
-      return byNameCountries.length > 0? 
-          res.status(201).json(byNameCountries)
+      return byNameCountries.length > 0
+        ? res.status(201).json(byNameCountries)
         : res.status(201).send("no encontro paises");
     } else {
       //const countries =  await getCountry();
