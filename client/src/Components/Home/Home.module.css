@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-}
+ }
 .cards{
   display: flex;
   justify-content: space-around;
@@ -19,9 +19,35 @@
 }
 
 .paginado{
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 100px;
+  margin-bottom: 10px;
   
+}
+.page{
+height: 40px;
+width: 40px;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+
+}
+.page:hover {
+  background-color: rgba(17, 112, 163, 0.287);  
+}
+.btn{
+background-color: #fff;
+border: 1px solid #087f5b;
+height: 50px;
+width: 50px;
+border-radius: 50%;
+cursor: pointer;
+font-family: 'Oswald', sans-serif;
+font-weight:bolder;
+}
+.btn:hover{
+  background-color: rgba(17, 112, 163, 0.287);  
 }

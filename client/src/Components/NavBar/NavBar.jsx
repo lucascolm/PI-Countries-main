@@ -70,35 +70,36 @@ const NavBar = () => {
    }
   return (
     <div className={s.NavBar}>
-      <div className={s.navUp}>
+
       <div className={s.log}>
         <Link to="/">
           <p className={s.logo}></p>
         </Link>
       </div>
+       <div className={s.navUp}>
+     
+       <div className={s.SerchBar}> 
+        <SerchBar />
+       </div> 
 
-      <div className={s.links}>
-        <div style={{ gap: "40px"}}>
-        <button onClick={()=>history.push("/home")} className={s.Link} to="/home">Inicio</button>
+        <div className={s.links}>
+        <button  onClick={()=>history.push("/home")} className={s.Link} to="/home">Inicio</button>
         <button onClick={()=>history.push("/home/activity")}className={s.Link} >Nueva actividad</button>
         </div>
-      </div>
-      <div className={s.SerchBar}>
-        <SerchBar className={s.search}/>
-      </div>
+      
       </div>
      <div className={s.selects}>
       <div>
-        <select value={filter.actividad} onChange={handleFilter}>
+        <select className={s.filterSelect} value={filter.actividad} onChange={handleFilter}>
           <option hidden>Por actividad:</option>
           {allActivities.length>0 &&
            allActivities.map((activity)=>{
-            return <option key={activity.id} value={activity.name}>{activity.name}</option>
+             return <option key={activity.id} value={activity.name}>{activity.name}</option>
             })}
         </select>
       </div>
         <div>
-          <select value={filter.continente} onChange={handleChangeOrder}>
+          <select className={s.filterSelect} value={filter.continente} onChange={handleChangeOrder}>
             <option hidden>Por continente: </option>
             <option value="Africa">Africa</option>
             <option value="Antarctic">Antartida</option>
@@ -110,14 +111,14 @@ const NavBar = () => {
           </select>
         </div>
         <div>
-          <select value={filter.order} onChange={handleChangeOrder}>
+          <select className={s.filterSelect} value={filter.order} onChange={handleChangeOrder}>
             <option hidden>Por orden: </option>
             <option value="ASC">A-Z</option>
             <option value="DESC">Z-A</option>
           </select>
         </div>
         <div>
-          <select value={filter.poblacion} onChange={handleChangeOrder}>
+          <select className={s.filterSelect} value={filter.poblacion} onChange={handleChangeOrder}>
             <option hidden>Por poblacion </option>
             <option value="PASC">Mayor poblacion</option>
             <option value="PDESC"> Menor poblacion</option>

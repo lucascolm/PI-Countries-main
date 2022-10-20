@@ -38,39 +38,44 @@ const CardDetail = (props) => {
             <img className={s.detailImg} src={flag} alt={name}></img>
           </div>
           <div className={s.countryInfo}>
-            <h1 className={s.detailName}>Pais: {name}</h1>
+            <h1 className={s.detailName}> {name}</h1>
           </div>
-          <div className={s.countryInfo}>
-            <p className={s.detailId}>Id: {paramsId}</p>
+          <div className={s.divider}>
+            <div className={s.countryInfo}>
+              <p className={s.detailId}>Id: {paramsId}</p>
+            </div>
+            <div className={s.countryInfo}>
+              <p className={s.detailContinet}>Continente: {continent}</p>
+            </div>
+            <div className={s.countryInfo}>
+              <p className={s.detailCapital}>Capital: {capital}</p>
+            </div>
           </div>
-          <div className={s.countryInfo}>
-            <p className={s.detailContinet}>Continete: {continent}</p>
+          <div className={s.divider}>
+            <div className={s.countryInfo}>
+              <p className={s.detailSubR}>Subregion: {subregion}</p>
+            </div>
+            <div className={s.countryInfo}>
+              <p className={s.detailArea}>Area:{area}[km^2]</p>
+            </div>
+            <div className={s.countryInfo}>
+              <p className={s.detailPopulation}>Poblacion: {population}</p>
+            </div>
           </div>
-          <div className={s.countryInfo}>
-            <p className={s.detailCapital}>Capital: {capital}</p>
-          </div>
-          <div className={s.countryInfo}>
-            <p className={s.detailSubR} >Subregion: {subregion}</p>
-          </div>
-          <div className={s.countryInfo}>
-            <p className={s.detailArea}>Area:{area}[km^2]</p>
-          </div>
-          <div className={s.countryInfo}>
-            <p className={s.detailPopulation}>Poblacion: {population}</p>
-          </div>
-          <div className={s.activities}>
-            <h4>actividades</h4>
-            <ul>
-              {activities && activities.length ? (
-                activities.map((a) => (
-                  <li key={a.id}>
-                    {a.name} Duracion: {a.duration} Dificultad: {a.difficulty}
-                  </li>
-                ))
-              ) : (
-                <p>No Hay actividades</p>
-              )}
-            </ul>
+          <h3>actividades</h3>
+          <div className={s.actividades}>
+            {activities && activities.length ? (
+              activities.map((a) => (
+                <div className={s.activitiesCard}>
+                  <h4>Actividad:{a.name}</h4>
+                  <p>Dificultad:{a.difficulty}</p>
+                  <p>Duracion:{a.duration}hs</p>
+                  <p>Temporada:{a.season}</p>
+                </div>
+              ))
+            ) : (
+              <p>No hay actividades registradas...</p>
+            )}
           </div>
         </div>
       </div>

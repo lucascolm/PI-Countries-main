@@ -95,12 +95,12 @@ const Home = () => {
         )}
       </div>
       <div className={s.paginado}>
-      <button onClick={prevpage}>anterior</button>
+      <button className={s.btn} onClick={prevpage}>back</button>
         {countriesN.length > 0 && typeof countriesN !== "string"
           ? paginado(countriesN).map((e, index) => {
             maxpage=e.pageinfo.totalPages
               return (
-                <button
+                <button className={s.page}
                   onClick={() => {
                     window.scrollTo(0,0)
                     dispatch(changePage(index+1))
@@ -114,13 +114,13 @@ const Home = () => {
            maxpage=e.pageinfo.totalPages
            
             return (
-              <button
+              <button className={s.page}
                 onClick={() => {
                   window.scrollTo(0,0)
                   dispatch(changePage(index+1))
                 }}
               >
-                {index + 1}
+                {+index + 1} 
               </button>
             );
           }):auxCountries.length > 0 &&
@@ -128,7 +128,7 @@ const Home = () => {
             console.log(maxpage)
             maxpage=e.pageinfo.totalPages
             return (
-              <button
+              <button className={s.page}
               onClick={() => {
                 window.scrollTo(0,0)
                 dispatch(changePage(index+1))
@@ -139,7 +139,7 @@ const Home = () => {
               );
             })}
             {/* console.log(e.pageinfo.totalPages) */}
-          <button onClick={nextpage}>siguiente</button>
+          <button className={s.btn} onClick={nextpage}>next</button>
       </div>
     </div>  
   );

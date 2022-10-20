@@ -31,6 +31,8 @@ const getCountry = async () => {
   }
 };
 
+
+
 router.get("/", async (req, res) => {
   //get all
   // console.log("entra a get");
@@ -57,13 +59,27 @@ router.get("/", async (req, res) => {
     res.status(400).send("error: " + error.message);
   }
 });
+router.get("/",async(req,res)=>{
+  const {population}=req.query;
+  console.log(population)
+  try {
+    const countriesByPop= await Country.findAll(
+      {where:
+        {population:population}});
+        res.status(200).json(countriesByPop)
+  } catch (error) {
+    console.log("Error en ruta get "+error.message);
+  }
+  })
+
+ 
 
 router.get("/:id", async (req, res) => {
   //get by id
-  console.log("holaaaaaaaaaaa");
+  // console.log("holaaaaaaaaaaa");
   const { id } = req.params;
   try {
-    const countries = await getCountry();
+    // const countries = await getCountry();
     const byIdCountries = await Country.findByPk(id.toUpperCase(), {
       include: [Activity],
     });

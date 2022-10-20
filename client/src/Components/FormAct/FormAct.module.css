@@ -19,9 +19,9 @@ h1{
     text-align: center;
   
 }
-input[type="text"],
+.formInput,
 input[type="number"],
-select {
+.formSelect {
   background: rgba(255,255,255,0.1);
   background-color: #e8eeef;
   color: black;
@@ -76,7 +76,10 @@ label.light {
 
 }
 .showcountries{
-  display: flex;
+ 
+    /* width: 90%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 .eachCountry{
   display: flex;

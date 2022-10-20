@@ -13,10 +13,11 @@
 }
 
 .titulo{
-  box-shadow: 0 2rem 2rem var(--black);
   font-size: 25px;
-  background: rgba(255,255,255,0.185);
-  color: black;
+  text-shadow: 1px 0px 10px rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+  
 }
 
 .linkLading{
@@ -27,14 +28,47 @@
 }
 .landingbtn{
   padding: 10px;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 5px;
   background-color: transparent;
   font-weight: bold;
+  color: white;
+  border: 2px solid white;
 }
   .landingbtn:hover{
     cursor: pointer;
-    background-color: rgba(78, 151, 235, 0.357);
+    color: black;
+    border: 2px solid rgb(8, 8, 8);
+    /* background-color: rgba(78, 151, 235, 0.357); */
+  }
+  .divider{
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.144);
+    width: 30%;
+    height: 100vh;
+    position: fixed;
+    right: 0px;
+  }
+  .dividerinfo{
+    margin-left:80px;
+    bottom: 400px;
+    padding: 20px;
+    position: fixed;
+  }
+  .welcome{
+    
+    width: 70%;
+    position: absolute;
+    left: 0px;
+    top: 320px;
+}
+  .welcomeText{
+    width: 70%;
+    margin: 0 auto;
+    font-size: 45px;
+    background: rgba(255, 255, 255, 0.185);
+    box-shadow: 0 2rem 2rem var(--black);
+    color: rgb(8, 8, 8);
   }
 a{
   

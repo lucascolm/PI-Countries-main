@@ -1,0 +1,10 @@
+.serchBar{
+  background: rgba(0, 0, 0, 0.049);
+  /* background-color: #e8eeef; */
+
+  font-size: 15px;
+  padding: 5px;
+  width: 20vw;
+  margin-right: 40px;
+  border: none;
+}

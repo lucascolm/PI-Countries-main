@@ -3,6 +3,7 @@ import { useState,useEffect } from 'react';
 import { useDispatch} from 'react-redux';
 // import { Link } from 'react-router-dom';
 import {getCountryByName,removeSearch,changePage} from '../../redux/actions'
+import s from  './SearchBar.module.css';
  const SerchBar = () => {
   
   const [name,setName]=useState("")
@@ -25,7 +26,7 @@ import {getCountryByName,removeSearch,changePage} from '../../redux/actions'
   return (
     <div>
       <input
-      className='searchbarComp'
+      className={s.serchBar}
       value={name}
       onChange={(e)=>setName(e.target.value)}
       type='text'

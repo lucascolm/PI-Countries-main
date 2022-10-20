@@ -97,17 +97,17 @@ const FormAct = () => {
         <h1>Crea una actividad:</h1>
         <div>
         <label>Nombre: </label>
-        <input type="text" name="name" value={activity.name} onChange={handleChange} />
+        <input className={s.formInput} type="text" name="name" value={activity.name} onChange={handleChange} />
           <label className={s.errorLabel} hidden={error.name?true:false}>{error.name}</label>
         </div>
         <div>
         <label>Dificultad: </label>
-        <input type="number" min="1" max="5" name="difficulty" value={activity.difficulty} onChange={handleChange} />
+        <input  className={s.formInput} type="number" min="1" max="5" name="difficulty" value={activity.difficulty} onChange={handleChange} />
         <label className={s.errorLabel} hidden={error.difficulty?true:false}>{error.difficulty}</label>
         </div>
         <div>
         <label>Duracion: </label>
-        <input type="number" min="1" max="24" name="duration" value={activity.duration} onChange={handleChange} />
+        <input className={s.formInput} type="number" min="1" max="24" name="duration" value={activity.duration} onChange={handleChange} />
         <label className={s.errorLabel} hidden={error.duration?true:false}>{error.duration}</label>
         </div>
         <div>
@@ -117,7 +117,7 @@ const FormAct = () => {
           placeholder="Seleccionar"
           options={opciones.temporadas}
         /> */}
-        <select onChange={handleSelectSeason}>
+        <select className={s.formSelect} onChange={handleSelectSeason}>
           <option hidden>Selecciona una estacion: </option>
           <option value="Summer">Verano</option>
           <option value="Autumn">Otoño</option>
@@ -128,13 +128,7 @@ const FormAct = () => {
         </div>
         <div>
         <label>Paises: </label>
-        {/* <Select
-        placeholder="Seleccionar"
-        options={auxCountries}
-        isMulti
-        closeMenuOnSelect={false}
-        /> */}
-        <select onChange={handleSelectCountry}>
+        <select className={s.formSelect} onChange={handleSelectCountry}>
           <option hidden>Selecciona un pais</option>
           {auxCountries.length > 0 &&
             auxCountries.filter((c)=>!activity.countries.includes(c.id)).map((c) => {
